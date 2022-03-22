@@ -2,7 +2,7 @@ let angleSlider, circleRadius, angleInput, sinSpan, cosSpan, tanSpan, angleState
 function setup() {
   createCanvas(600, 400);
   rectMode(CENTER)
-  createSpan('Angle(degrees): ')
+  createSpan('Ângulos(graus): ')
   angleSlider = createSlider(0, 360, 1, 1);
   angleSlider.style('width: 250px')
   
