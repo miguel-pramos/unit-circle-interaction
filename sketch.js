@@ -52,9 +52,9 @@ function draw() {
 			(rawAngle != HALF_PI) & (rawAngle != PI + HALF_PI)
 				? tan(rawAngle)
 				: 'Indefinido',
-		secValue = cosValue != 0 ? 1 / cosValue : 'Indefinido',
-		cscValue = sinValue != 0 ? 1 / sinValue : 'Indefinido',
-		cotValue = tanValue != 0 ? 1 / tanValue : 'Indefinido';
+		secValue = roundValue(cosValue) != 0 ? 1 / cosValue : 'Indefinido',
+		cscValue = roundValue(sinValue) != 0 ? 1 / sinValue : 'Indefinido',
+		cotValue = roundValue(tanValue) != 0 ? 1 / tanValue : 'Indefinido';
 
 	sinSpan.textContent = `sen ${angleState} ≅ ${roundValue(sinValue)}`;
 	cosSpan.textContent = `cos ${angleState} ≅ ${roundValue(cosValue)}`;
@@ -120,6 +120,6 @@ function treatAngle(angle) {
 
 function roundValue(value, decimals = 2) {
 	return typeof value == 'number'
-		? Math.round(cos(value) * 10 ** decimals) / 10 ** decimals
+		? Math.round(value * 10 ** decimals) / 10 ** decimals
 		: 'Indefinido';
 }
